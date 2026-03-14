@@ -80,7 +80,7 @@ function AttendanceTable() {
 
     if (loading) {
         return (
-            <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[700px]">
+            <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[calc(100vh-200px)]">
                 Loading employees...
             </div>
         );

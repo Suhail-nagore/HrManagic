@@ -151,7 +151,7 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
     }
 
     return (
-        <div className="bg-white rounded-lg shadow flex flex-col h-[700px]">
+        <div className="bg-white rounded-lg shadow flex flex-col h-[calc(100vh-200px)]">
 
             <div className="p-4 border-b flex items-center justify-between">
                 <SearchInput
