@@ -89,29 +89,29 @@ function AttendanceModal({ employee, onClose }) {
 
     const handleSave = async () => {
 
-        const payload = Object.entries(attendance).map(
-            ([day, status]) => ({
-                employeeId: employee._id,
-                date: new Date(year, month - 1, day),
-                status
-            })
-        );
+    const payload = Object.entries(attendance).map(
+        ([day, status]) => ({
+            employeeId: employee._id,
+            date: new Date(Date.UTC(year, month - 1, Number(day))),
+            status
+        })
+    );
 
-        try {
+    try {
 
-            await API.post("/attendance/bulk", payload);
-            toast.success("Changes saved Successfully")
+        await API.post("/attendance/bulk", payload);
 
-            onClose();
+        toast.success("Changes saved Successfully");
 
-        } catch {
+        onClose();
 
-            alert("Failed to save attendance");
-            toast.error("Failed to save changes")
+    } catch {
 
-        }
+        toast.error("Failed to save changes");
 
-    };
+    }
+
+};
 
     if (loading) {
         return (
