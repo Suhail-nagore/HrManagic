@@ -136,7 +136,7 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
 
     if (loading) {
         return (
-            <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[700px]">
+            <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[calc(100vh-200px)]">
                 Loading employees...
             </div>
         );
@@ -144,7 +144,7 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
 
     if (employees.length === 0) {
         return (
-            <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[700px]">
+            <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[calc(100vh-200px)]">
                 No employees added yet.
             </div>
         );

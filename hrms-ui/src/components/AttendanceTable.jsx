@@ -95,14 +95,14 @@ function AttendanceTable() {
 
     if (employees.length === 0) {
         return (
-            <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[700px]">
+            <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[calc(100vh-200px)]">
                 No employees available to mark attendance.
             </div>
         );
     }
 
     return (
-        <div className="bg-white rounded-lg shadow flex flex-col h-[700px]">
+        <div className="bg-white rounded-lg shadow flex flex-col h-[calc(100vh-200px)]">
             <div className="flex items-center justify-between p-4 border-b">
                 <SearchInput
                     value={search}
