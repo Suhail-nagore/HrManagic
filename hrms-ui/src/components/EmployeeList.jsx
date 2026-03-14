@@ -23,9 +23,6 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
     const [sortDir, setSortDir] = useState("asc");
 
     const [deleteId, setDeleteId] = useState(null);
-
-    /* Attendance modal */
-
     const [selectedEmployee, setSelectedEmployee] = useState(null);
     const [openModal, setOpenModal] = useState(false);
 
@@ -44,8 +41,6 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
     const closeAttendance = () => {
         setSelectedEmployee(null);
     };
-
-    /* ---------- EDIT ---------- */
 
     const startEditing = (emp) => {
         setEditingId(emp._id);
@@ -88,8 +83,6 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
         }
     };
 
-    /* ---------- DELETE ---------- */
-
     const confirmDelete = (id) => {
         setDeleteId(id);
     };
@@ -112,8 +105,6 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
 
         setDeleteId(null);
     };
-
-    /* ---------- SORT ---------- */
 
     const handleSort = (field) => {
         if (sortField === field) {
@@ -143,8 +134,6 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
         return 0;
     });
 
-    /* ---------- LOADING ---------- */
-
     if (loading) {
         return (
             <div className="bg-white p-6 rounded-lg shadow flex flex-col h-[700px]">
@@ -160,8 +149,6 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
             </div>
         );
     }
-
-    /* ---------- UI ---------- */
 
     return (
         <div className="bg-white rounded-lg shadow flex flex-col h-[700px]">
@@ -302,9 +289,6 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
                                         )}
 
                                     </td>
-
-                                    {/* Attendance column */}
-
                                     <td className="p-3 align-middle">
 
                                         <Button variant="primary" onClick={() => openAttendance(emp)}>
@@ -312,9 +296,6 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
                                         </Button>
 
                                     </td>
-
-                                    {/* Actions */}
-
                                     <td className="p-3 w-[110px]">
 
                                         <div className="flex gap-3">
@@ -374,18 +355,12 @@ function EmployeeList({ employees, loading, onEmployeeDeleted, onEmployeeAdded }
 
             </div>
             
-
-
-            {/* DELETE MODAL */}
-
             {deleteId && (
                 <DeleteConfirm
                     onConfirm={performDelete}
                     onCancel={cancelDelete}
                 />
             )}
-
-            {/* ATTENDANCE MODAL */}
 
             {selectedEmployee && (
                 <AttendanceModal

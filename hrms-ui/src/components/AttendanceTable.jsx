@@ -13,8 +13,6 @@ function AttendanceTable() {
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
 
-    /* LOAD EMPLOYEES + ATTENDANCE */
-
     const loadData = async (selectedDate) => {
         try {
             setLoading(true);
@@ -105,13 +103,7 @@ function AttendanceTable() {
 
     return (
         <div className="bg-white rounded-lg shadow flex flex-col h-[700px]">
-
-            {/* HEADER */}
-
             <div className="flex items-center justify-between p-4 border-b">
-
-                {/* Legend */}
-
                 <SearchInput
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
@@ -130,10 +122,6 @@ function AttendanceTable() {
                     </div>
 
                 </div>
-
-
-                {/* Controls */}
-
                 <div className="flex items-center gap-3">
 
                     <input
@@ -150,9 +138,6 @@ function AttendanceTable() {
                 </div>
 
             </div>
-
-            {/* SCROLLABLE TABLE */}
-
             <div className="flex-1 overflow-y-auto">
 
                 <table className="w-full text-sm">

@@ -23,11 +23,8 @@ function Layout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-
-      {/* Navbar */}
-
-      <header className="bg-white border-b h-[70px]">
+    <div className="min-h-screen bg-gray-50"> 
+     <header className="bg-white border-b h-[70px]">
 
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
@@ -43,9 +40,6 @@ function Layout() {
         </div>
 
       </header>
-
-      {/* Page Content */}
-
       <main className="max-w-6xl mx-auto p-6">
 
         <Outlet />

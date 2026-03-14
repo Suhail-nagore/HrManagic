@@ -9,7 +9,6 @@ import {
 const router = express.Router();
 
 router.post("/bulk", saveBulkAttendance);
-
 router.get("/", getAttendance);
 router.get("/employee/:employeeId", getEmployeeAttendance);
 router.get("/date", getAttendanceByDate);

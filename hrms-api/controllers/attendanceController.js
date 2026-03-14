@@ -1,7 +1,5 @@
 import Attendance from "../models/Attendance.js";
 
-/* BULK SAVE ATTENDANCE */
-
 export const saveBulkAttendance = async (req, res) => {
     try {
         const records = req.body;
@@ -46,8 +44,6 @@ export const saveBulkAttendance = async (req, res) => {
         });
     }
 };
-
-/* GET ATTENDANCE */
 
 export const getAttendance = async (req, res) => {
     try {

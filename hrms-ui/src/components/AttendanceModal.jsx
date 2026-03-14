@@ -17,8 +17,6 @@ function AttendanceModal({ employee, onClose }) {
 
     const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
-    /* FETCH ATTENDANCE */
-
     useEffect(() => {
 
         const fetchAttendance = async () => {
@@ -57,8 +55,6 @@ function AttendanceModal({ employee, onClose }) {
 
     }, [employee._id, month, year]);
 
-    /* TOGGLE DATE STATUS */
-
     const toggleAttendance = (day) => {
 
         setAttendance((prev) => {
@@ -80,8 +76,6 @@ function AttendanceModal({ employee, onClose }) {
 
     };
 
-    /* CALCULATE STATS */
-
     const presentCount =
         Object.values(attendance).filter((v) => v === "Present").length;
 
@@ -92,8 +86,6 @@ function AttendanceModal({ employee, onClose }) {
 
     const percentage =
         totalDays ? Math.round((presentCount / totalDays) * 100) : 0;
-
-    /* SAVE ATTENDANCE */
 
     const handleSave = async () => {
 
@@ -137,8 +129,6 @@ function AttendanceModal({ employee, onClose }) {
 
             <div className="bg-white rounded-lg shadow-lg w-[500px] p-6">
 
-                {/* HEADER */}
-
                 <div className="flex justify-between items-center mb-4">
 
                     <h3 className="text-lg font-semibold">
@@ -157,8 +147,6 @@ function AttendanceModal({ employee, onClose }) {
 
                 </div>
                 <p className="mb-4">Please toggle on date to mark present or absent</p>
-
-                {/* CALENDAR */}
 
                 <div className="grid grid-cols-7 gap-2">
 
@@ -191,8 +179,6 @@ function AttendanceModal({ employee, onClose }) {
 
                 </div>
 
-                {/* STATS */}
-
                 <div className="mt-6 text-sm text-gray-700 space-y-1">
 
                     <div>
@@ -216,8 +202,6 @@ function AttendanceModal({ employee, onClose }) {
                     </div>
 
                 </div>
-
-                {/* FOOTER */}
 
                 <div className="flex justify-end gap-3 mt-6">
 

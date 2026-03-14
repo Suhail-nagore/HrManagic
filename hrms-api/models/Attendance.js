@@ -24,8 +24,6 @@ const attendanceSchema = new mongoose.Schema(
   }
 );
 
-/* Prevent duplicate attendance for same employee + date */
-
 attendanceSchema.index(
   { employeeId: 1, date: 1 },
   { unique: true }

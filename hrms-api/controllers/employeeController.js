@@ -1,6 +1,5 @@
 import Employee from "../models/Employee.js";
 
-/* CREATE EMPLOYEE */
 export const createEmployee = async (req, res) => {
   try {
     const { fullName, email, department } = req.body;
@@ -11,7 +10,6 @@ export const createEmployee = async (req, res) => {
       });
     }
 
-    // check duplicate email
     const existing = await Employee.findOne({ email });
 
     if (existing) {
@@ -20,7 +18,6 @@ export const createEmployee = async (req, res) => {
       });
     }
 
-    // find last employee
     const lastEmployee = await Employee.findOne()
       .sort({ createdAt: -1 });
 
@@ -52,8 +49,6 @@ export const createEmployee = async (req, res) => {
   }
 };
 
-/* GET ALL EMPLOYEES */
-
 export const getEmployees = async (req, res) => {
   try {
     const employees = await Employee.find().sort({
@@ -67,8 +62,6 @@ export const getEmployees = async (req, res) => {
     });
   }
 };
-
-/* DELETE EMPLOYEE */
 
 export const deleteEmployee = async (req, res) => {
   try {

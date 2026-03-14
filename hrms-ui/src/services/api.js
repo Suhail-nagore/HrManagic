@@ -5,8 +5,6 @@ const API = axios.create({
   baseURL: "http://localhost:5000/api"
 });
 
-/* START PROGRESS */
-
 API.interceptors.request.use((config) => {
 
   NProgress.start();
@@ -14,8 +12,6 @@ API.interceptors.request.use((config) => {
   return config;
 
 });
-
-/* STOP PROGRESS */
 
 API.interceptors.response.use(
 
