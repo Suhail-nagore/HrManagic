@@ -2,7 +2,7 @@ import axios from "axios";
 import NProgress from "nprogress";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api"
+  baseURL: "https://hrmanagic-backend.onrender.com/api"
 });
 
 API.interceptors.request.use((config) => {
